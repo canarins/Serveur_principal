@@ -1,0 +1,15 @@
+[Unit]
+Description=Canarin API Log service
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/logserver
+Environment=PATH=/home/ubuntu/logserver/venv/bin
+ExecStart=/home/ubuntu/logserver/venv/bin/python app.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

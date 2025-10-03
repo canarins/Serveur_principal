@@ -1,0 +1,15 @@
+[Unit]
+Description=Canarin Telegram Log Monitor
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/logserver
+EnvironmentFile=-/etc/environment
+ExecStart=/home/ubuntu/logserver/venv/bin/python telegram_monitor.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

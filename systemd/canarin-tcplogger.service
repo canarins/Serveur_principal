@@ -1,0 +1,12 @@
+[Unit]
+Description=Canarin TCP Log Server
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/logserver
+ExecStart=/home/ubuntu/logserver/venv/bin/python remote_TCP_log_Server_App.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
